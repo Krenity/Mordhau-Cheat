@@ -105,10 +105,6 @@ namespace MordhauCheat_2._0
                     Alwayschasinglabel.Enabled = true;
                     mem.WriteMemory(Offsets.MinTimeChasing, "float", "0");
                 }
-                else
-                {
-                    mem.WriteMemory(Offsets.MinTimeChasing, "float", "0.25");
-                }
                 if (releasetimebox.Enabled)
                 {
                     releasetimebox.Enabled = true;
