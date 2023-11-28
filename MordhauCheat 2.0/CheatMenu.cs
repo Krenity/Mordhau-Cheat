@@ -96,15 +96,9 @@ namespace MordhauCheat_2._0
                     Turncapbutton.Enabled = true;
                     mem.WriteMemory(Offsets.NoSlowdownWhenChased, "byte", "0");
                 }
-                else
-                {
-                    mem.WriteMemory(Offsets.NoSlowdownWhenChased, "byte", "1");
-                }
-                if (Alwayschasinglabel.Enabled)
-                {
-                    Alwayschasinglabel.Enabled = true;
-                    mem.WriteMemory(Offsets.MinTimeChasing, "float", "0");
-                }
+                else { mem.WriteMemory(Offsets.NoSlowdownWhenChased, "byte", "1"); }
+
+
                 if (releasetimebox.Enabled)
                 {
                     releasetimebox.Enabled = true;

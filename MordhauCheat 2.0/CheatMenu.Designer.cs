@@ -50,7 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Noslowdownwhenchased = new System.Windows.Forms.CheckBox();
-            this.Alwayschasinglabel = new System.Windows.Forms.CheckBox();
             this.releasetimebox = new System.Windows.Forms.CheckBox();
             this.drawtimebox = new System.Windows.Forms.CheckBox();
             this.norealoadbox = new System.Windows.Forms.CheckBox();
@@ -308,21 +307,6 @@
             this.Noslowdownwhenchased.TabIndex = 11;
             this.Noslowdownwhenchased.Text = "No slow when chased";
             this.Noslowdownwhenchased.UseVisualStyleBackColor = false;
-            // 
-            // Alwayschasinglabel
-            // 
-            this.Alwayschasinglabel.AutoSize = true;
-            this.Alwayschasinglabel.BackColor = System.Drawing.Color.Transparent;
-            this.Alwayschasinglabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Alwayschasinglabel.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Alwayschasinglabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.Alwayschasinglabel.Location = new System.Drawing.Point(466, 258);
-            this.Alwayschasinglabel.Margin = new System.Windows.Forms.Padding(6);
-            this.Alwayschasinglabel.Name = "Alwayschasinglabel";
-            this.Alwayschasinglabel.Size = new System.Drawing.Size(199, 30);
-            this.Alwayschasinglabel.TabIndex = 12;
-            this.Alwayschasinglabel.Text = "Always chasing";
-            this.Alwayschasinglabel.UseVisualStyleBackColor = false;
             // 
             // releasetimebox
             // 
@@ -590,7 +574,6 @@
             this.Controls.Add(this.norealoadbox);
             this.Controls.Add(this.teamespbox);
             this.Controls.Add(this.Noslowdownwhenchased);
-            this.Controls.Add(this.Alwayschasinglabel);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.FOVcheck);
             this.Controls.Add(this.metroLabel2);
@@ -633,7 +616,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox Antiafkbutton;
         private System.Windows.Forms.CheckBox Noslowdownwhenchased;
-        private System.Windows.Forms.CheckBox Alwayschasinglabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox releasetimebox;
