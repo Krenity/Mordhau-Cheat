@@ -5,6 +5,10 @@
 + Update 28 Patch 1
 ```
 
+```
+ To run, please go to the folder you are launching the game from, eg Epic games, and simply run the exe, that's all. Make sure your game is open first, there is an error message if the game is open however there are no checks if you launched an incorrect version, so make sure if you're on Steam you launch the Steam version of the cheat and vice versa
+```
+
 
 **This is a Mordhau cheat, it has been posted on unknowncheats:**
 
