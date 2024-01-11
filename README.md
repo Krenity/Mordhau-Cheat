@@ -18,6 +18,6 @@ Raw Links:
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=42933
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=43096
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=42893
-- https://www.unknowncheats.me/forum/other-fps-games/612663-mordhau-cheat-patch-28-a.html
+- https://www.unknowncheats.me/forum/other-fps-games/612663-mordhau-cheat-patch-a.html
 - https://github.com/Krenity/Mordhau-Cheat-28/commits/main/
 - https://github.com/erfg12/memory.dll"
