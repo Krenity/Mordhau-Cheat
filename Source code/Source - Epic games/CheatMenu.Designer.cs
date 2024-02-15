@@ -49,10 +49,6 @@
             this.DodgeCooldownBar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Noslowdownwhenchased = new System.Windows.Forms.CheckBox();
-            this.releasetimebox = new System.Windows.Forms.CheckBox();
-            this.drawtimebox = new System.Windows.Forms.CheckBox();
-            this.norealoadbox = new System.Windows.Forms.CheckBox();
             this.FOVtrackbar = new System.Windows.Forms.TrackBar();
             this.metroLabel2 = new System.Windows.Forms.Label();
             this.FOVcheck = new System.Windows.Forms.CheckBox();
@@ -62,14 +58,12 @@
             this.turncapytrack = new System.Windows.Forms.TrackBar();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dodgecooldown = new System.Windows.Forms.Label();
             this.dodgetime = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.nosmoke = new System.Windows.Forms.CheckBox();
             this.ezparry = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DodgeDurationBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DodgeCooldownBar)).BeginInit();
@@ -294,70 +288,10 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Time";
             // 
-            // Noslowdownwhenchased
-            // 
-            this.Noslowdownwhenchased.AutoSize = true;
-            this.Noslowdownwhenchased.BackColor = System.Drawing.Color.Transparent;
-            this.Noslowdownwhenchased.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Noslowdownwhenchased.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Noslowdownwhenchased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.Noslowdownwhenchased.Location = new System.Drawing.Point(466, 210);
-            this.Noslowdownwhenchased.Margin = new System.Windows.Forms.Padding(6);
-            this.Noslowdownwhenchased.Name = "Noslowdownwhenchased";
-            this.Noslowdownwhenchased.Size = new System.Drawing.Size(259, 30);
-            this.Noslowdownwhenchased.TabIndex = 11;
-            this.Noslowdownwhenchased.Text = "No slow when chased";
-            this.Noslowdownwhenchased.UseVisualStyleBackColor = false;
-            // 
-            // releasetimebox
-            // 
-            this.releasetimebox.AutoSize = true;
-            this.releasetimebox.BackColor = System.Drawing.Color.Transparent;
-            this.releasetimebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.releasetimebox.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.releasetimebox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.releasetimebox.Location = new System.Drawing.Point(52, 275);
-            this.releasetimebox.Margin = new System.Windows.Forms.Padding(6);
-            this.releasetimebox.Name = "releasetimebox";
-            this.releasetimebox.Size = new System.Drawing.Size(271, 30);
-            this.releasetimebox.TabIndex = 13;
-            this.releasetimebox.Text = "Instant release time";
-            this.releasetimebox.UseVisualStyleBackColor = false;
-            // 
-            // drawtimebox
-            // 
-            this.drawtimebox.AutoSize = true;
-            this.drawtimebox.BackColor = System.Drawing.Color.Transparent;
-            this.drawtimebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.drawtimebox.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drawtimebox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.drawtimebox.Location = new System.Drawing.Point(52, 317);
-            this.drawtimebox.Margin = new System.Windows.Forms.Padding(6);
-            this.drawtimebox.Name = "drawtimebox";
-            this.drawtimebox.Size = new System.Drawing.Size(235, 30);
-            this.drawtimebox.TabIndex = 14;
-            this.drawtimebox.Text = "Instant draw time";
-            this.drawtimebox.UseVisualStyleBackColor = false;
-            // 
-            // norealoadbox
-            // 
-            this.norealoadbox.AutoSize = true;
-            this.norealoadbox.BackColor = System.Drawing.Color.Transparent;
-            this.norealoadbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.norealoadbox.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.norealoadbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.norealoadbox.Location = new System.Drawing.Point(52, 359);
-            this.norealoadbox.Margin = new System.Windows.Forms.Padding(6);
-            this.norealoadbox.Name = "norealoadbox";
-            this.norealoadbox.Size = new System.Drawing.Size(139, 30);
-            this.norealoadbox.TabIndex = 15;
-            this.norealoadbox.Text = "No reload";
-            this.norealoadbox.UseVisualStyleBackColor = false;
-            // 
             // FOVtrackbar
             // 
             this.FOVtrackbar.LargeChange = 1;
-            this.FOVtrackbar.Location = new System.Drawing.Point(315, 490);
+            this.FOVtrackbar.Location = new System.Drawing.Point(124, 407);
             this.FOVtrackbar.Maximum = 150;
             this.FOVtrackbar.Name = "FOVtrackbar";
             this.FOVtrackbar.Size = new System.Drawing.Size(366, 45);
@@ -368,11 +302,11 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroLabel2.Location = new System.Drawing.Point(687, 490);
+            this.metroLabel2.Location = new System.Drawing.Point(506, 411);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(24, 26);
+            this.metroLabel2.Size = new System.Drawing.Size(48, 26);
             this.metroLabel2.TabIndex = 19;
-            this.metroLabel2.Text = "0";
+            this.metroLabel2.Text = "FOV";
             // 
             // FOVcheck
             // 
@@ -381,7 +315,7 @@
             this.FOVcheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FOVcheck.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FOVcheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.FOVcheck.Location = new System.Drawing.Point(242, 490);
+            this.FOVcheck.Location = new System.Drawing.Point(51, 407);
             this.FOVcheck.Margin = new System.Windows.Forms.Padding(6);
             this.FOVcheck.Name = "FOVcheck";
             this.FOVcheck.Size = new System.Drawing.Size(79, 30);
@@ -394,7 +328,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label10.Location = new System.Drawing.Point(5, 405);
+            this.label10.Location = new System.Drawing.Point(5, 280);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(125, 37);
             this.label10.TabIndex = 21;
@@ -407,7 +341,7 @@
             this.teamespbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teamespbox.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teamespbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.teamespbox.Location = new System.Drawing.Point(52, 490);
+            this.teamespbox.Location = new System.Drawing.Point(52, 365);
             this.teamespbox.Margin = new System.Windows.Forms.Padding(6);
             this.teamespbox.Name = "teamespbox";
             this.teamespbox.Size = new System.Drawing.Size(163, 30);
@@ -461,17 +395,6 @@
             this.label8.TabIndex = 27;
             this.label8.Text = "0";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label11.Location = new System.Drawing.Point(5, 226);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(125, 37);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Ranged";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -523,7 +446,7 @@
             this.nosmoke.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.nosmoke.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nosmoke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.nosmoke.Location = new System.Drawing.Point(53, 448);
+            this.nosmoke.Location = new System.Drawing.Point(53, 323);
             this.nosmoke.Margin = new System.Windows.Forms.Padding(6);
             this.nosmoke.Name = "nosmoke";
             this.nosmoke.Size = new System.Drawing.Size(175, 30);
@@ -546,16 +469,6 @@
             this.ezparry.Text = "Easy parry";
             this.ezparry.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(522, 359);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 26);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Yes";
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -563,29 +476,23 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(1055, 549);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.ezparry);
             this.Controls.Add(this.nosmoke);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dodgecooldown);
             this.Controls.Add(this.dodgetime);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.turncapytrack);
             this.Controls.Add(this.turncapxtrack);
             this.Controls.Add(this.DodgeDurationBar);
-            this.Controls.Add(this.drawtimebox);
             this.Controls.Add(this.dodgebutton);
             this.Controls.Add(this.Turncapbutton);
             this.Controls.Add(this.DodgeCooldownBar);
-            this.Controls.Add(this.releasetimebox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.norealoadbox);
             this.Controls.Add(this.teamespbox);
-            this.Controls.Add(this.Noslowdownwhenchased);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.FOVcheck);
             this.Controls.Add(this.metroLabel2);
@@ -627,12 +534,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox Antiafkbutton;
-        private System.Windows.Forms.CheckBox Noslowdownwhenchased;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox releasetimebox;
-        private System.Windows.Forms.CheckBox drawtimebox;
-        private System.Windows.Forms.CheckBox norealoadbox;
         private System.Windows.Forms.TrackBar FOVtrackbar;
         private System.Windows.Forms.Label metroLabel2;
         private System.Windows.Forms.CheckBox FOVcheck;
@@ -642,7 +545,6 @@
         private System.Windows.Forms.TrackBar turncapytrack;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label dodgecooldown;
         private System.Windows.Forms.Label dodgetime;
@@ -651,7 +553,6 @@
         private System.Windows.Forms.Label resuplabel;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox ezparry;
-        private System.Windows.Forms.Label label6;
     }
 }
 

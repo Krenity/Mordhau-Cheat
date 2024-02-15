@@ -12,6 +12,7 @@ namespace MordhauCheat_2._0
         public Offsets() { }
 
         static Offsets() { }
+
         private const string GWorld = "Mordhau-Win64-Shipping.exe+0x58FCB80";
 
         // main
@@ -20,8 +21,14 @@ namespace MordhauCheat_2._0
         public static string PlayerCameraManager = PlayerController + ",2B8";
         public static string APlayerState = PlayerController + ",228";
         public static string ACharacter = PlayerController + ",260";
-
         public static string Pawn = PlayerController + ",2A0";
+        public static string UMordhauMotion = Pawn + ",B08";
+
+        public static string CheckIfSwing = UMordhauMotion + ",59";
+        public static string ActiveParryWindow = UMordhauMotion + ",A68";
+        public static string FeintWindow = UMordhauMotion + ",B74";
+        public static string HitThroughWalls = UMordhauMotion + ",A46";
+
         public static string Player_Array = AGameStateBase + ",238";
         public static string CharacterMovement = Pawn + ",288";
 

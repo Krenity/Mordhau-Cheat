@@ -47,14 +47,29 @@ namespace MordhauCheat_2._0
              }   
         }
 
+        bool skip = false;
+        float defaultfov = 0;
+
         private void Global_Tick(object sender, EventArgs e)
         {
             if (mem.ReadByte(Offsets.IsAlive) != 0)
             {
+                if (skip == false)
+                {
+                    float defaultfov = mem.ReadFloat(Offsets.DefaultFOV);
+                    skip = true;
+                }
+
+                // if (mem.ReadMemory<byte>(Offsets.CheckIfSwing) == 1)
+                // {
+                //     mem.WriteMemory(Offsets.UMordhauMotion + ",B48", "float", "5");
+                // }
+
                 if (mem.ReadFloat(Offsets.AfkTimer, "") > 170 & (Antiafkbutton.Checked))
                 {
                     mem.WriteMemory(Offsets.AfkTimer, "float", "0");
                 }
+                    
                 afklabel.Text = mem.ReadFloat(Offsets.AfkTimer, "").ToString();
                 if (mem.ReadByte(Offsets.nextbox, "") == 0) { resuplabel.Text = "Yes"; } else { resuplabel.Text = "No"; }
                 mem.WriteMemory(Offsets.DodgeCooldown, "float", (DodgeCooldownBar.Value * 0.150).ToString());
@@ -70,9 +85,6 @@ namespace MordhauCheat_2._0
                 else
                 {
                     mem.WriteMemory(Offsets.CanDodge, "byte", "0");
-                    
-
-
                 }
                 if (Turncapbutton.Checked)
                 {
@@ -89,43 +101,6 @@ namespace MordhauCheat_2._0
                     }
                 }
 
-
-
-                if (Noslowdownwhenchased.Enabled)
-                {
-                    Turncapbutton.Enabled = true;
-                    mem.WriteMemory(Offsets.NoSlowdownWhenChased, "byte", "0");
-                }
-                else { mem.WriteMemory(Offsets.NoSlowdownWhenChased, "byte", "1"); }
-
-
-                if (releasetimebox.Enabled)
-                {
-                    releasetimebox.Enabled = true;
-                    mem.WriteMemory(Offsets.RangedReleaseTime, "float", "0");
-                }
-                else
-                {
-                    mem.WriteMemory(Offsets.RangedReleaseTime, "float", "0.2");
-                }
-                if (drawtimebox.Enabled)
-                {
-                    drawtimebox.Enabled = true;
-                    mem.WriteMemory(Offsets.RangedDrawTime, "float", "0");
-                }
-                else
-                {
-                    mem.WriteMemory(Offsets.RangedDrawTime, "float", "0.7");
-                }
-                if (norealoadbox.Enabled)
-                {
-                    norealoadbox.Enabled = true;
-                    mem.WriteMemory(Offsets.RangedReloadTime, "float", "0");
-                }
-                else
-                {
-                    mem.WriteMemory(Offsets.RangedReloadTime, "float", (1/-10).ToString());
-                }
                 if (FOVcheck.Checked)
                 {
                     FOVtrackbar.Enabled = true;
@@ -135,6 +110,7 @@ namespace MordhauCheat_2._0
                 else
                 {
                     FOVtrackbar.Enabled = false;
+                    mem.WriteMemory(Offsets.RealFOV, "float", defaultfov.ToString());
                     metroLabel2.Text = mem.ReadFloat(Offsets.DefaultFOV).ToString();
                 }
                 if (teamespbox.Checked)
