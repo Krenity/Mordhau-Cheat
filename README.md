@@ -2,7 +2,8 @@
 
 ```diff
 - Update 28
-+ Update 28 Patch 1 
+- Update 28 Patch 1
++ Update 29
 ```
 
 - <a href="https://github.com/Krenity/Mordhau-Cheat/releases">Latest Download</a>
