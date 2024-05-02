@@ -1,5 +1,7 @@
 <h1> LATEST VERSION </h1>
 
+![image](https://github.com/Krenity/Mordhau-Cheat/assets/79339771/794a1a8b-1332-4d87-b342-b0541fb42400)
+
 ```diff
 - Update 28
 - Update 28 Patch 1
