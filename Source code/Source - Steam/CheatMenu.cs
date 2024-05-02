@@ -14,128 +14,115 @@ namespace MordhauCheat_2._0
 {
 
     public partial class Menu : Form
-    {
+        {
         [DllImport("user32.dll")]
-        static extern short GetAsyncKeyState(Int32 vKey);
+        static extern short GetAsyncKeyState( Int32 vKey );
 
         private readonly Mem mem = new Mem();
         public Menu()
-        {
-            InitializeComponent();
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            int pID = mem.GetProcIdFromName("Mordhau-Win64-Shipping");
-            if (pID != 0)
             {
+            InitializeComponent();
+            }
+
+
+        private void Form1_Load( object sender , EventArgs e )
+            {
+            int pID = mem.GetProcIdFromName("Mordhau-Win64-Shipping");
+            if ( pID != 0 )
+                {
                 mem.OpenProcess(pID);
                 pIDLabel.Text = "MORDHAU PID: " + pID.ToString();
 
 
-            }
+                }
             else
-            {
-                DialogResult res = MessageBox.Show("Mordhau must be running", "Silly window for silly people", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (res == DialogResult.OK)
                 {
+                DialogResult res = MessageBox.Show("Mordhau must be running" , "Silly window for silly people" , MessageBoxButtons.OK , MessageBoxIcon.Information);
+                if ( res == DialogResult.OK )
+                    {
                     System.Windows.Forms.Application.Exit();
+                    }
                 }
             }
-        }
 
         bool skip = false;
         float defaultfov = 0;
 
-        float WorldDistance(Vector3 Player, Vector3 Enemy)
-        {
-            return (float)Math.Sqrt(Math.Pow(Player.X - Enemy.X, 2.0) + Math.Pow(Player.Y - Enemy.Y, 2.0) + Math.Pow(Player.Z - Enemy.Z, 2.0));
-        }
-
-        private void Global_Tick(object sender, EventArgs e)
-        {
-            if (mem.ReadByte(Offsets.IsAlive) != 0)
+        float WorldDistance( Vector3 Player , Vector3 Enemy )
             {
-                if (skip == false)
+            return (float)Math.Sqrt(Math.Pow(Player.X - Enemy.X , 2.0) + Math.Pow(Player.Y - Enemy.Y , 2.0) + Math.Pow(Player.Z - Enemy.Z , 2.0));
+            }
+
+        private void Global_Tick( object sender , EventArgs e )
+            {
+            if ( mem.ReadByte(Offsets.IsAlive) != 0 )
                 {
+                if ( skip == false )
+                    {
                     float defaultfov = mem.ReadFloat(Offsets.DefaultFOV);
                     skip = true;
-                }
+                    }
 
-                if (mem.ReadFloat(Offsets.AfkTimer, "") > 170 & (Antiafkbutton.Checked))
-                {
-                    mem.WriteMemory(Offsets.AfkTimer, "float", "0");
-                }
+                if ( mem.ReadFloat(Offsets.AfkTimer , "") > 170 & (Antiafkbutton.Checked) )
+                    {
+                    mem.WriteMemory(Offsets.AfkTimer , "float" , "0");
+                    }
 
-                afklabel.Text = mem.ReadFloat(Offsets.AfkTimer, "").ToString();
-                if (mem.ReadByte(Offsets.nextbox, "") == 0) { resuplabel.Text = "Yes"; } else { resuplabel.Text = "No"; }
-                mem.WriteMemory(Offsets.DodgeCooldown, "float", (DodgeCooldownBar.Value * 0.150).ToString());
-                mem.WriteMemory(Offsets.DodgeDuration, "float", (DodgeDurationBar.Value * 0.375).ToString());
+                afklabel.Text = mem.ReadFloat(Offsets.AfkTimer , "").ToString();
+                if ( mem.ReadByte(Offsets.nextbox , "") == 0 ) { resuplabel.Text = "Yes"; } else { resuplabel.Text = "No"; }
+                mem.WriteMemory(Offsets.DodgeCooldown , "float" , (DodgeCooldownBar.Value * 0.150).ToString());
+                mem.WriteMemory(Offsets.DodgeDuration , "float" , (DodgeDurationBar.Value * 0.375).ToString());
                 alivelabel.Text = "Alive";
-                if (dodgebutton.Checked)
-                {
+                if ( dodgebutton.Checked )
+                    {
                     dodgebutton.Enabled = true;
-                    mem.WriteMemory(Offsets.CanDodge, "byte", "1");
-                    dodgecooldown.Text = mem.ReadFloat(Offsets.DodgeCooldown, "").ToString();
-                    dodgetime.Text = mem.ReadFloat(Offsets.DodgeDuration, "").ToString();
-                }
+                    mem.WriteMemory(Offsets.CanDodge , "byte" , "1");
+                    dodgecooldown.Text = mem.ReadFloat(Offsets.DodgeCooldown , "").ToString();
+                    dodgetime.Text = mem.ReadFloat(Offsets.DodgeDuration , "").ToString();
+                    }
                 else
-                {
-                    mem.WriteMemory(Offsets.CanDodge, "byte", "0");
-                }
-                if (Turncapbutton.Checked)
-                {
+                    {
+                    mem.WriteMemory(Offsets.CanDodge , "byte" , "0");
+                    }
+                if ( Turncapbutton.Checked )
+                    {
                     turncapxtrack.Enabled = true;
                     turncapytrack.Enabled = true;
                     label9.Text = turncapxtrack.Value.ToString();
                     label8.Text = turncapytrack.Value.ToString();
 
 
-                    if (mem.ReadFloat(Offsets.turncapx) != -1)
-                    {
-                        mem.WriteMemory(Offsets.turncapy, "float", turncapytrack.Value.ToString());
-                        mem.WriteMemory(Offsets.turncapx, "float", turncapxtrack.Value.ToString());
+                    if ( mem.ReadFloat(Offsets.turncapx) != -1 )
+                        {
+                        mem.WriteMemory(Offsets.turncapy , "float" , turncapytrack.Value.ToString());
+                        mem.WriteMemory(Offsets.turncapx , "float" , turncapxtrack.Value.ToString());
+                        }
                     }
-                }
 
-                if (FOVcheck.Checked)
-                {
+                if ( FOVcheck.Checked )
+                    {
                     FOVtrackbar.Enabled = true;
                     metroLabel2.Text = FOVtrackbar.Value.ToString();
-                    mem.WriteMemory(Offsets.RealFOV, "float", FOVtrackbar.Value.ToString());
-                }
+                    mem.WriteMemory(Offsets.RealFOV , "float" , FOVtrackbar.Value.ToString());
+                    }
                 else
-                {
+                    {
                     FOVtrackbar.Enabled = false;
-                    mem.WriteMemory(Offsets.RealFOV, "float", defaultfov.ToString());
+                    mem.WriteMemory(Offsets.RealFOV , "float" , defaultfov.ToString());
                     metroLabel2.Text = mem.ReadFloat(Offsets.DefaultFOV).ToString();
-                }
-                if (nosmoke.Checked)
-                {
+                    }
+                if ( nosmoke.Checked )
+                    {
                     nosmoke.Enabled = true;
-                    mem.WriteMemory(Offsets.smokesmooth, "float", "0");
-                    mem.WriteMemory(Offsets.smokesmoothfield, "float", "0");
-                }
+                    mem.WriteMemory(Offsets.smokesmooth , "float" , "0");
+                    mem.WriteMemory(Offsets.smokesmoothfield , "float" , "0");
+                    }
 
-                if (ezparry.Checked)
-                {
+                if ( ezparry.Checked )
+                    {
                     nosmoke.Enabled = true;
-                    mem.WriteMemory(Offsets.easyparry, "float", "0");
-                    mem.WriteMemory(Offsets.EasyParryDuration, "float", "1000");
-                }  
-
-                if (lateriposttoggle.Checked)
-                {
-                    lateripostelabel.Text = "0." + lateripostbar.Value.ToString();
-                    lateripostbar.Enabled = true;
-                    mem.WriteMemory(Offsets.RiposteWindowBase, "float", "0." + lateripostbar.Value.ToString());
-                }
-                else
-                {
-                    lateripostbar.Enabled = false;
-                    mem.WriteMemory(Offsets.RiposteWindowBase, "float", "0.1");
-                }
+                    mem.WriteMemory(Offsets.easyparry , "float" , "0");
+                    }
 
                 Debug.WriteLine("Team 1 - R: " + mem.ReadFloat(Offsets.folorteamA_R) + "G: " + mem.ReadFloat(Offsets.folorteamA_G) + "B " + mem.ReadFloat(Offsets.folorteamA_B));
                 Debug.WriteLine("Team 1 - R: " + team1R.Value + "G: " + team1G.Value + "B " + team1B.Value);
@@ -143,32 +130,32 @@ namespace MordhauCheat_2._0
                 Debug.WriteLine("Team 2 - R: " + mem.ReadFloat(Offsets.folorteamB_R) + "G: " + mem.ReadFloat(Offsets.folorteamB_G) + "B " + mem.ReadFloat(Offsets.folorteamB_B));
                 Debug.WriteLine("Team 2 - R: " + team2R.Value + "G: " + team2G.Value + "B " + team2B.Value);
                 Debug.WriteLine("-----------------");
-               
-                if (teamcolors.Checked)
+
+                if ( teamcolors.Checked )
                     {
-                       float MapToFloat(int number)
-                           {
-                               return (float)number / 255.0F;
-                           }
+                    float MapToFloat( int number )
+                        {
+                        return (float)number / 255.0F;
+                        }
 
-                        //mem.WriteMemory(Offsets.forcecoloroverride, "byte", "1");
+                    //mem.WriteMemory(Offsets.forcecoloroverride, "byte", "1");
 
-                        mem.WriteMemory(Offsets.folorteamA_R , "float", MapToFloat(Convert.ToInt32(team1R.Value)).ToString());
-                        mem.WriteMemory(Offsets.folorteamA_G , "float", MapToFloat(Convert.ToInt32(team1G.Value)).ToString());
-                        mem.WriteMemory(Offsets.folorteamA_B , "float", MapToFloat(Convert.ToInt32(team1B.Value)).ToString());
-                        team1label.ForeColor = Color.FromArgb(255, Convert.ToInt32(team1R.Value), Convert.ToInt32(team1G.Value), Convert.ToInt32(team1B.Value));
+                    mem.WriteMemory(Offsets.folorteamA_R , "float" , MapToFloat(Convert.ToInt32(team1R.Value)).ToString());
+                    mem.WriteMemory(Offsets.folorteamA_G , "float" , MapToFloat(Convert.ToInt32(team1G.Value)).ToString());
+                    mem.WriteMemory(Offsets.folorteamA_B , "float" , MapToFloat(Convert.ToInt32(team1B.Value)).ToString());
+                    team1label.ForeColor = Color.FromArgb(255 , Convert.ToInt32(team1R.Value) , Convert.ToInt32(team1G.Value) , Convert.ToInt32(team1B.Value));
 
-                        mem.WriteMemory(Offsets.folorteamB_R , "float", MapToFloat(Convert.ToInt32(team2R.Value)).ToString());
-                        mem.WriteMemory(Offsets.folorteamB_G , "float", MapToFloat(Convert.ToInt32(team2G.Value)).ToString());
-                        mem.WriteMemory(Offsets.folorteamB_B , "float", MapToFloat(Convert.ToInt32(team2B.Value)).ToString());
-                        team2label.ForeColor = Color.FromArgb(0, Convert.ToInt32(team2R.Value), Convert.ToInt32(team2G.Value), Convert.ToInt32(team2B.Value));
+                    mem.WriteMemory(Offsets.folorteamB_R , "float" , MapToFloat(Convert.ToInt32(team2R.Value)).ToString());
+                    mem.WriteMemory(Offsets.folorteamB_G , "float" , MapToFloat(Convert.ToInt32(team2G.Value)).ToString());
+                    mem.WriteMemory(Offsets.folorteamB_B , "float" , MapToFloat(Convert.ToInt32(team2B.Value)).ToString());
+                    team2label.ForeColor = Color.FromArgb(0 , Convert.ToInt32(team2R.Value) , Convert.ToInt32(team2G.Value) , Convert.ToInt32(team2B.Value));
                     }
-                else { mem.WriteMemory(Offsets.forcecoloroverride, "byte", "0"); }
+                else { mem.WriteMemory(Offsets.forcecoloroverride , "byte" , "0"); }
 
                 if ( breakanims.Checked )
                     {
-                        int keybind = (int)breakanimkeybind.Value;
-                        short keyStatus = GetAsyncKeyState((int)keybind);
+                    int keybind = (int)breakanimkeybind.Value;
+                    short keyStatus = GetAsyncKeyState((int)keybind);
                     if ( keyStatus < 0 ) { mem.WriteMemory(Offsets.EndTime , "float" , "0"); breakanimlabel.Text = "HELD"; breakanimlabel.ForeColor = Color.GreenYellow; }
                     else
                         {
@@ -176,24 +163,9 @@ namespace MordhauCheat_2._0
                         breakanimlabel.ForeColor = Color.PaleVioletRed;
                         }
                     }
-                else { breakanimlabel.ForeColor = Color.PaleVioletRed; breakanimlabel.Text = "OFF";}
-
-                if (parrycooldown.Checked)
-                {
-                    parrytrack.Enabled = true;
-                    mem.WriteMemory(Offsets.ParryRecoveryTime, "float", "0." + parrytrack.Value.ToString());
-                    parrytracklabel.Text = "0." + parrytrack.Value.ToString();
-                }
-                else
-                {
-                    parrytrack.Enabled = false;
-                    parrytracklabel.Text = "0";
-                    mem.WriteMemory(Offsets.ParryRecoveryTime, "float", "0.675");
-                }
+                else { breakanimlabel.ForeColor = Color.PaleVioletRed; breakanimlabel.Text = "OFF"; }
             }
-
             else { alivelabel.Text = "Dead!"; }
-
         }
 
         private Overlay overlay = new Overlay();

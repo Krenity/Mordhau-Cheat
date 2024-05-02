@@ -45,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Antiafkbutton = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Autoblock = new System.Windows.Forms.CheckBox();
             this.Turncapbutton = new System.Windows.Forms.CheckBox();
             this.DodgeDurationBar = new System.Windows.Forms.TrackBar();
             this.DodgeCooldownBar = new System.Windows.Forms.TrackBar();
@@ -64,21 +66,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.nosmoke = new System.Windows.Forms.CheckBox();
             this.ezparry = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.AutoblockTimer = new System.Windows.Forms.Timer(this.components);
-            this.Autoblock = new System.Windows.Forms.CheckBox();
-            this.parrytrack = new System.Windows.Forms.TrackBar();
-            this.parrycooldown = new System.Windows.Forms.CheckBox();
-            this.parrytracklabel = new System.Windows.Forms.Label();
-            this.lateripostelabel = new System.Windows.Forms.Label();
-            this.lateriposttoggle = new System.Windows.Forms.CheckBox();
-            this.lateripostbar = new System.Windows.Forms.TrackBar();
             this.breakanims = new System.Windows.Forms.CheckBox();
             this.breakanimkeybind = new System.Windows.Forms.NumericUpDown();
             this.breakanimlabel = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.team1R = new System.Windows.Forms.NumericUpDown();
@@ -102,8 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FOVtrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turncapxtrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turncapytrack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parrytrack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lateripostbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.breakanimkeybind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.team1R)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.team1B)).BeginInit();
@@ -286,6 +276,29 @@
             this.Antiafkbutton.Text = "Anti-AFK";
             this.Antiafkbutton.UseVisualStyleBackColor = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(25, 447);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(175, 30);
+            this.checkBox1.TabIndex = 38;
+            this.checkBox1.Text = "ESP (BROKEN)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // Autoblock
+            // 
+            this.Autoblock.AutoSize = true;
+            this.Autoblock.Enabled = false;
+            this.Autoblock.Location = new System.Drawing.Point(25, 411);
+            this.Autoblock.Name = "Autoblock";
+            this.Autoblock.Size = new System.Drawing.Size(247, 30);
+            this.Autoblock.TabIndex = 39;
+            this.Autoblock.Text = "Autoblock (BROKEN)";
+            this.Autoblock.UseVisualStyleBackColor = true;
+            // 
             // Turncapbutton
             // 
             this.Turncapbutton.AutoSize = true;
@@ -346,7 +359,7 @@
             // FOVtrackbar
             // 
             this.FOVtrackbar.LargeChange = 1;
-            this.FOVtrackbar.Location = new System.Drawing.Point(54, 492);
+            this.FOVtrackbar.Location = new System.Drawing.Point(52, 495);
             this.FOVtrackbar.Maximum = 150;
             this.FOVtrackbar.Name = "FOVtrackbar";
             this.FOVtrackbar.Size = new System.Drawing.Size(429, 45);
@@ -509,108 +522,11 @@
             this.ezparry.Text = "Easy parry";
             this.ezparry.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(25, 447);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(175, 30);
-            this.checkBox1.TabIndex = 38;
-            this.checkBox1.Text = "ESP (BROKEN)";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // AutoblockTimer
             // 
             this.AutoblockTimer.Enabled = true;
             this.AutoblockTimer.Interval = 10;
             this.AutoblockTimer.Tick += new System.EventHandler(this.Autoblock_Tick);
-            // 
-            // Autoblock
-            // 
-            this.Autoblock.AutoSize = true;
-            this.Autoblock.Enabled = false;
-            this.Autoblock.Location = new System.Drawing.Point(25, 411);
-            this.Autoblock.Name = "Autoblock";
-            this.Autoblock.Size = new System.Drawing.Size(247, 30);
-            this.Autoblock.TabIndex = 39;
-            this.Autoblock.Text = "Autoblock (BROKEN)";
-            this.Autoblock.UseVisualStyleBackColor = true;
-            // 
-            // parrytrack
-            // 
-            this.parrytrack.LargeChange = 1;
-            this.parrytrack.Location = new System.Drawing.Point(59, 285);
-            this.parrytrack.Maximum = 600;
-            this.parrytrack.Name = "parrytrack";
-            this.parrytrack.Size = new System.Drawing.Size(207, 45);
-            this.parrytrack.TabIndex = 40;
-            this.parrytrack.Value = 1;
-            // 
-            // parrycooldown
-            // 
-            this.parrycooldown.AutoSize = true;
-            this.parrycooldown.BackColor = System.Drawing.Color.Transparent;
-            this.parrycooldown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.parrycooldown.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrycooldown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.parrycooldown.Location = new System.Drawing.Point(26, 246);
-            this.parrycooldown.Margin = new System.Windows.Forms.Padding(6);
-            this.parrycooldown.Name = "parrycooldown";
-            this.parrycooldown.Size = new System.Drawing.Size(211, 30);
-            this.parrycooldown.TabIndex = 41;
-            this.parrycooldown.Text = "Parry cooldown:";
-            this.parrycooldown.UseVisualStyleBackColor = false;
-            // 
-            // parrytracklabel
-            // 
-            this.parrytracklabel.AutoSize = true;
-            this.parrytracklabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrytracklabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.parrytracklabel.Location = new System.Drawing.Point(22, 285);
-            this.parrytracklabel.Name = "parrytracklabel";
-            this.parrytracklabel.Size = new System.Drawing.Size(18, 19);
-            this.parrytracklabel.TabIndex = 42;
-            this.parrytracklabel.Text = "0";
-            // 
-            // lateripostelabel
-            // 
-            this.lateripostelabel.AutoSize = true;
-            this.lateripostelabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lateripostelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lateripostelabel.Location = new System.Drawing.Point(274, 285);
-            this.lateripostelabel.Name = "lateripostelabel";
-            this.lateripostelabel.Size = new System.Drawing.Size(18, 19);
-            this.lateripostelabel.TabIndex = 45;
-            this.lateripostelabel.Text = "0";
-            // 
-            // lateriposttoggle
-            // 
-            this.lateriposttoggle.AutoSize = true;
-            this.lateriposttoggle.BackColor = System.Drawing.Color.Transparent;
-            this.lateriposttoggle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lateriposttoggle.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lateriposttoggle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.lateriposttoggle.Location = new System.Drawing.Point(286, 246);
-            this.lateriposttoggle.Margin = new System.Windows.Forms.Padding(6);
-            this.lateriposttoggle.Name = "lateriposttoggle";
-            this.lateriposttoggle.Size = new System.Drawing.Size(187, 30);
-            this.lateriposttoggle.TabIndex = 44;
-            this.lateriposttoggle.Text = "Late riposte:";
-            this.lateriposttoggle.UseVisualStyleBackColor = false;
-            // 
-            // lateripostbar
-            // 
-            this.lateripostbar.LargeChange = 10;
-            this.lateripostbar.Location = new System.Drawing.Point(319, 285);
-            this.lateripostbar.Maximum = 1000;
-            this.lateripostbar.Minimum = 100;
-            this.lateripostbar.Name = "lateripostbar";
-            this.lateripostbar.Size = new System.Drawing.Size(214, 45);
-            this.lateripostbar.SmallChange = 5;
-            this.lateripostbar.TabIndex = 43;
-            this.lateripostbar.Value = 100;
             // 
             // breakanims
             // 
@@ -619,7 +535,7 @@
             this.breakanims.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.breakanims.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.breakanims.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.breakanims.Location = new System.Drawing.Point(548, 245);
+            this.breakanims.Location = new System.Drawing.Point(15, 246);
             this.breakanims.Margin = new System.Windows.Forms.Padding(6);
             this.breakanims.Name = "breakanims";
             this.breakanims.Size = new System.Drawing.Size(199, 30);
@@ -632,7 +548,7 @@
             this.breakanimkeybind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.breakanimkeybind.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.breakanimkeybind.ForeColor = System.Drawing.Color.Transparent;
-            this.breakanimkeybind.Location = new System.Drawing.Point(672, 284);
+            this.breakanimkeybind.Location = new System.Drawing.Point(139, 285);
             this.breakanimkeybind.Name = "breakanimkeybind";
             this.breakanimkeybind.Size = new System.Drawing.Size(50, 28);
             this.breakanimkeybind.TabIndex = 47;
@@ -646,7 +562,7 @@
             // 
             this.breakanimlabel.AutoSize = true;
             this.breakanimlabel.ForeColor = System.Drawing.Color.LightCoral;
-            this.breakanimlabel.Location = new System.Drawing.Point(565, 283);
+            this.breakanimlabel.Location = new System.Drawing.Point(32, 284);
             this.breakanimlabel.Name = "breakanimlabel";
             this.breakanimlabel.Size = new System.Drawing.Size(84, 26);
             this.breakanimlabel.TabIndex = 48;
@@ -661,7 +577,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.Red;
             this.linkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(631, 319);
+            this.linkLabel1.Location = new System.Drawing.Point(98, 320);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(91, 13);
             this.linkLabel1.TabIndex = 49;
@@ -669,28 +585,6 @@
             this.linkLabel1.Text = "Check keybinds";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.White;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(275, 317);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "miliseconds";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(23, 317);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "miliseconds";
             // 
             // label15
             // 
@@ -719,7 +613,7 @@
             this.team1R.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.team1R.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team1R.ForeColor = System.Drawing.Color.Transparent;
-            this.team1R.Location = new System.Drawing.Point(486, 409);
+            this.team1R.Location = new System.Drawing.Point(479, 407);
             this.team1R.Maximum = new decimal(new int[] {
             255,
             0,
@@ -739,7 +633,7 @@
             this.team1B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.team1B.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team1B.ForeColor = System.Drawing.Color.Transparent;
-            this.team1B.Location = new System.Drawing.Point(687, 409);
+            this.team1B.Location = new System.Drawing.Point(680, 407);
             this.team1B.Maximum = new decimal(new int[] {
             255,
             0,
@@ -759,7 +653,7 @@
             this.team1G.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.team1G.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team1G.ForeColor = System.Drawing.Color.Transparent;
-            this.team1G.Location = new System.Drawing.Point(586, 409);
+            this.team1G.Location = new System.Drawing.Point(579, 407);
             this.team1G.Maximum = new decimal(new int[] {
             255,
             0,
@@ -779,7 +673,7 @@
             this.team2B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.team2B.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team2B.ForeColor = System.Drawing.Color.Transparent;
-            this.team2B.Location = new System.Drawing.Point(687, 454);
+            this.team2B.Location = new System.Drawing.Point(680, 452);
             this.team2B.Maximum = new decimal(new int[] {
             255,
             0,
@@ -799,7 +693,7 @@
             this.team2G.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.team2G.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team2G.ForeColor = System.Drawing.Color.Transparent;
-            this.team2G.Location = new System.Drawing.Point(586, 454);
+            this.team2G.Location = new System.Drawing.Point(579, 452);
             this.team2G.Maximum = new decimal(new int[] {
             255,
             0,
@@ -819,7 +713,7 @@
             this.team2R.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.team2R.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team2R.ForeColor = System.Drawing.Color.Transparent;
-            this.team2R.Location = new System.Drawing.Point(486, 454);
+            this.team2R.Location = new System.Drawing.Point(479, 452);
             this.team2R.Maximum = new decimal(new int[] {
             255,
             0,
@@ -838,7 +732,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.LightCoral;
-            this.label18.Location = new System.Drawing.Point(458, 409);
+            this.label18.Location = new System.Drawing.Point(451, 407);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(24, 26);
             this.label18.TabIndex = 60;
@@ -848,7 +742,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.LightGreen;
-            this.label19.Location = new System.Drawing.Point(560, 409);
+            this.label19.Location = new System.Drawing.Point(553, 407);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(24, 26);
             this.label19.TabIndex = 61;
@@ -858,7 +752,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label20.Location = new System.Drawing.Point(660, 409);
+            this.label20.Location = new System.Drawing.Point(653, 407);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 26);
             this.label20.TabIndex = 62;
@@ -868,7 +762,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label21.Location = new System.Drawing.Point(660, 456);
+            this.label21.Location = new System.Drawing.Point(653, 454);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(24, 26);
             this.label21.TabIndex = 258;
@@ -878,7 +772,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.LightGreen;
-            this.label22.Location = new System.Drawing.Point(560, 456);
+            this.label22.Location = new System.Drawing.Point(553, 454);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(24, 26);
             this.label22.TabIndex = 257;
@@ -888,7 +782,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.LightCoral;
-            this.label23.Location = new System.Drawing.Point(458, 456);
+            this.label23.Location = new System.Drawing.Point(451, 454);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(24, 26);
             this.label23.TabIndex = 256;
@@ -898,7 +792,7 @@
             // 
             this.team1label.AutoSize = true;
             this.team1label.ForeColor = System.Drawing.Color.LightCoral;
-            this.team1label.Location = new System.Drawing.Point(368, 408);
+            this.team1label.Location = new System.Drawing.Point(361, 406);
             this.team1label.Name = "team1label";
             this.team1label.Size = new System.Drawing.Size(84, 26);
             this.team1label.TabIndex = 259;
@@ -908,7 +802,7 @@
             // 
             this.team2label.AutoSize = true;
             this.team2label.ForeColor = System.Drawing.Color.LightCoral;
-            this.team2label.Location = new System.Drawing.Point(368, 456);
+            this.team2label.Location = new System.Drawing.Point(361, 454);
             this.team2label.Name = "team2label";
             this.team2label.Size = new System.Drawing.Size(84, 26);
             this.team2label.TabIndex = 260;
@@ -921,7 +815,7 @@
             this.teamcolors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teamcolors.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teamcolors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.teamcolors.Location = new System.Drawing.Point(373, 370);
+            this.teamcolors.Location = new System.Drawing.Point(366, 368);
             this.teamcolors.Margin = new System.Windows.Forms.Padding(6);
             this.teamcolors.Name = "teamcolors";
             this.teamcolors.Size = new System.Drawing.Size(163, 30);
@@ -953,18 +847,10 @@
             this.Controls.Add(this.team1R);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.breakanimlabel);
             this.Controls.Add(this.breakanimkeybind);
             this.Controls.Add(this.breakanims);
-            this.Controls.Add(this.lateripostelabel);
-            this.Controls.Add(this.lateriposttoggle);
-            this.Controls.Add(this.lateripostbar);
-            this.Controls.Add(this.parrytracklabel);
-            this.Controls.Add(this.parrycooldown);
-            this.Controls.Add(this.parrytrack);
             this.Controls.Add(this.ezparry);
             this.Controls.Add(this.nosmoke);
             this.Controls.Add(this.label13);
@@ -1001,8 +887,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FOVtrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turncapxtrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turncapytrack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parrytrack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lateripostbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.breakanimkeybind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.team1R)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.team1B)).EndInit();
@@ -1052,19 +936,11 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Timer AutoblockTimer;
         private System.Windows.Forms.CheckBox Autoblock;
-        private System.Windows.Forms.TrackBar parrytrack;
-        private System.Windows.Forms.CheckBox parrycooldown;
-        private System.Windows.Forms.Label parrytracklabel;
-        private System.Windows.Forms.Label lateripostelabel;
-        private System.Windows.Forms.CheckBox lateriposttoggle;
-        private System.Windows.Forms.TrackBar lateripostbar;
         private System.Windows.Forms.CheckBox breakanims;
         private System.Windows.Forms.NumericUpDown breakanimkeybind;
         private System.Windows.Forms.Label breakanimlabel;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown team1R;
