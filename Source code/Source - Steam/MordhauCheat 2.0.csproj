@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -38,12 +40,34 @@
   <PropertyGroup>
     <ApplicationIcon>Gear_Maul.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Memory, Version=1.2.24.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Memory.dll.x64.1.2.24\lib\netstandard2.0\Memory.dll</HintPath>
+    <Reference Include="Memory, Version=1.2.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Memory.dll.x64.1.2.27\lib\netstandard2.0\Memory.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,10 +86,19 @@
       <DependentUpon>CheatMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Offsets.cs" />
+    <Compile Include="Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overlay.Designer.cs">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CheatMenu.resx">
       <DependentUpon>CheatMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlay.resx">
+      <DependentUpon>Overlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
