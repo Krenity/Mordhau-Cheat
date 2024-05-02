@@ -18,7 +18,7 @@
 The cheat does have previously accepted/reviewed downloads, (view below) however it has gotten more and more annoying to wait for approval for a simple offset change, you can view any changes to the cheat by <a href="https://github.com/Krenity/Mordhau-Cheat/commits/main/">Commit logs,</a> if you are unsure if it's safe. On the other hand, the cheat does use a memory injector plugin to make programming a lot simpler<a href="https://github.com/erfg12/memory.dll"> Memory.dll </a>
 
 Raw Links:
-- https://www.unknowncheats.me/forum/downloads.php?do=file&id=44831  Current
+- https://www.unknowncheats.me/forum/downloads.php?do=file&id=44839  Current
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=42933
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=43096
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=42893
