@@ -14,7 +14,7 @@ namespace MordhauCheat_2._0
         static Offsets() { }
 
 
-        public const string GWorld = "Mordhau-Win64-Shipping.exe+0x590A300";
+        public const string GWorld = "Mordhau-Win64-Shipping.exe+0x590B400";
 
         // main
         public static string PlayerController = GWorld + ",180,38,0,30";
