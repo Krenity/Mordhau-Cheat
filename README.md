@@ -17,7 +17,7 @@
 
 <h2> This is a Mordhau cheat, it has been posted on <a href="https://www.unknowncheats.me/forum/other-fps-games/612663-mordhau-cheat-patch-28-a.html"> Unknowncheats <a> </h2>
 
-The cheat does have previously accepted/reviewed downloads, (view below) however it has gotten more and more annoying to wait for approval for a simple offset change, you can view any changes to the cheat by <a href="https://github.com/Krenity/Mordhau-Cheat/commits/main/">Commit logs,</a>. The cheat uses a memory injector plugin to make programming a lot simpler<a href="https://github.com/erfg12/memory.dll"> Memory.dll. Moreover, this cheat wouldnt exist without <a href="https://github.com/Spuckwaffel/UEDumper">UEDumper</a>, the dumper used to get all pointers and data. </a>
+The cheat does have previously accepted/reviewed downloads, (view below) however it has gotten more and more annoying to wait for approval for a simple offset change, you can view any changes to the cheat by <a href="https://github.com/Krenity/Mordhau-Cheat/commits/main/">Commit logs,</a>. The cheat uses a memory injector plugin to make programming a lot simpler<a href="https://github.com/erfg12/memory.dll"> Memory.dll </a>. Moreover, this cheat wouldnt exist without <a href="https://github.com/Spuckwaffel/UEDumper">UEDumper</a>, the dumper used to get all pointers and data. </a>
 
 Raw Links:
 - https://www.unknowncheats.me/forum/downloads.php?do=file&id=46114 Current
