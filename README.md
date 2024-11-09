@@ -7,7 +7,8 @@
 - Update 28 Patch 1
 - Update 29
 - Update 29 Patch 1
-+ Update 29 Patch 3
+- Update 29 Patch 3
++ Update 30
 ```
 
 - <a href="https://github.com/Krenity/Mordhau-Cheat/releases">Latest Download</a>
