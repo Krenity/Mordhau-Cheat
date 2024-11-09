@@ -61,8 +61,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Memory, Version=1.2.27.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Memory.dll.x64.1.2.27\lib\netstandard2.0\Memory.dll</HintPath>
+    <Reference Include="Memory">
+      <HintPath>..\..\..\Memory.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -110,7 +110,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.manifest" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

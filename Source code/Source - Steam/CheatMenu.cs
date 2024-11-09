@@ -62,6 +62,7 @@ namespace MordhauCheat_2._0
                     float defaultfov = mem.ReadFloat(Offsets.DefaultFOV);
                     skip = true;
                     }
+                alivelabel.Text = "Alive";
 
                 if ( mem.ReadFloat(Offsets.AfkTimer , "") > 170 & (Antiafkbutton.Checked) )
                     {
@@ -70,20 +71,23 @@ namespace MordhauCheat_2._0
 
                 afklabel.Text = mem.ReadFloat(Offsets.AfkTimer , "").ToString();
                 if ( mem.ReadByte(Offsets.nextbox , "") == 0 ) { resuplabel.Text = "Yes"; } else { resuplabel.Text = "No"; }
-                mem.WriteMemory(Offsets.DodgeCooldown , "float" , (DodgeCooldownBar.Value * 0.150).ToString());
-                mem.WriteMemory(Offsets.DodgeDuration , "float" , (DodgeDurationBar.Value * 0.375).ToString());
-                alivelabel.Text = "Alive";
-                if ( dodgebutton.Checked )
-                    {
+
+                if (dodgebutton.Checked) 
+                {
                     dodgebutton.Enabled = true;
-                    mem.WriteMemory(Offsets.CanDodge , "byte" , "1");
-                    dodgecooldown.Text = mem.ReadFloat(Offsets.DodgeCooldown , "").ToString();
-                    dodgetime.Text = mem.ReadFloat(Offsets.DodgeDuration , "").ToString();
-                    }
+                    mem.WriteMemory(Offsets.CanDodge, "byte", "1");
+                    mem.WriteMemory(Offsets.DodgeDuration , "float" , (DodgeDurationBar.Value / 100f).ToString());
+                    mem.WriteMemory(Offsets.DodgeCooldown , "float" , (DodgeCooldownBar.Value / 150f).ToString());
+                    dodgecooldown.Text = (DodgeCooldownBar.Value).ToString();
+                    dodgetime.Text = (DodgeDurationBar.Value).ToString();
+                }
                 else
                     {
                     mem.WriteMemory(Offsets.CanDodge , "byte" , "0");
+                    mem.WriteMemory(Offsets.DodgeDuration , "float" , (0.35).ToString());
+                    mem.WriteMemory(Offsets.DodgeCooldown , "float" , (0.15).ToString());
                     }
+
                 if ( Turncapbutton.Checked )
                     {
                     turncapxtrack.Enabled = true;
@@ -123,13 +127,6 @@ namespace MordhauCheat_2._0
                     nosmoke.Enabled = true;
                     mem.WriteMemory(Offsets.easyparry , "float" , "0");
                     }
-
-                Debug.WriteLine("Team 1 - R: " + mem.ReadFloat(Offsets.folorteamA_R) + "G: " + mem.ReadFloat(Offsets.folorteamA_G) + "B " + mem.ReadFloat(Offsets.folorteamA_B));
-                Debug.WriteLine("Team 1 - R: " + team1R.Value + "G: " + team1G.Value + "B " + team1B.Value);
-                Debug.WriteLine("-------");
-                Debug.WriteLine("Team 2 - R: " + mem.ReadFloat(Offsets.folorteamB_R) + "G: " + mem.ReadFloat(Offsets.folorteamB_G) + "B " + mem.ReadFloat(Offsets.folorteamB_B));
-                Debug.WriteLine("Team 2 - R: " + team2R.Value + "G: " + team2G.Value + "B " + team2B.Value);
-                Debug.WriteLine("-----------------");
 
                 if ( teamcolors.Checked )
                     {
